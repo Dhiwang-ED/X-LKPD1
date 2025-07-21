@@ -1,0 +1,687 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lembar Kerja Barisan dan Deret Aritmatika</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f0f4f8;
+            color: #333;
+        }
+        
+        .page-break {
+            page-break-after: always;
+            margin-bottom: 2rem;
+            padding-bottom: 2rem;
+            border-bottom: 1px dashed #ccc;
+        }
+        
+        .answer-box {
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            padding: 10px;
+            min-height: 80px;
+            background-color: #fff;
+        }
+        
+        .math {
+            font-family: 'Times New Roman', serif;
+        }
+        
+        .example {
+            background-color: #e6f7ff;
+            border-left: 4px solid #1890ff;
+        }
+        
+        .practice {
+            background-color: #f6ffed;
+            border-left: 4px solid #52c41a;
+        }
+        
+        input[type="text"] {
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            padding: 5px 10px;
+            width: 100%;
+            margin-top: 5px;
+        }
+        
+        .header {
+            background: linear-gradient(135deg, #4b6cb7 0%, #182848 100%);
+            color: white;
+        }
+        
+        .section-title {
+            background: linear-gradient(90deg, #4b6cb7 0%, #182848 100%);
+            color: white;
+        }
+    </style>
+</head>
+<body class="p-4 md:p-8">
+    <div class="max-w-4xl mx-auto bg-white rounded-lg shadow-lg overflow-hidden">
+        <!-- Header -->
+        <div class="header p-6 text-center">
+            <h1 class="text-3xl font-bold">LEMBAR KERJA SISWA</h1>
+            <h2 class="text-2xl mt-2">BARISAN DAN DERET ARITMATIKA</h2>
+        </div>
+        
+        <!-- Intro -->
+        <div class="p-6">
+            <p class="mb-4">Nama: <input type="text" class="border border-gray-300 rounded px-2 py-1 w-64" placeholder="Tulis nama lengkap"></p>
+            <p class="mb-4">Kelas: <input type="text" class="border border-gray-300 rounded px-2 py-1 w-64" placeholder="Tulis kelas"></p>
+            <p class="mb-4">Tanggal: <input type="date" class="border border-gray-300 rounded px-2 py-1"></p>
+            
+            <div class="bg-blue-50 border-l-4 border-blue-500 p-4 my-6">
+                <p class="font-medium">Tujuan Pembelajaran:</p>
+                <p class="mt-2">Peserta didik dapat menyelesaikan permasalahan dengan konsep barisan dan deret aritmatika.</p>
+            </div>
+            
+            <div class="bg-yellow-50 border-l-4 border-yellow-400 p-4 my-6">
+                <p class="font-medium">Petunjuk:</p>
+                <ol class="list-decimal ml-5 mt-2">
+                    <li>Bacalah materi dengan seksama</li>
+                    <li>Perhatikan contoh soal yang diberikan</li>
+                    <li>Kerjakan latihan soal pada tempat yang disediakan</li>
+                    <li>Tanyakan kepada guru jika ada yang belum dipahami</li>
+                </ol>
+            </div>
+        </div>
+        
+        <!-- 1. Pengertian Barisan Aritmatika -->
+        <div class="p-6 border-t-2 border-gray-100">
+            <h2 class="section-title text-xl font-bold p-3 rounded-lg mb-4">1. Pengertian Barisan Aritmatika</h2>
+            
+            <div class="mb-6">
+                <p class="mb-3">Barisan aritmatika adalah suatu barisan bilangan yang memiliki selisih (beda) yang tetap antara dua suku berurutan.</p>
+                
+                <div class="bg-blue-50 p-4 rounded-lg mb-4">
+                    <p class="font-medium">Definisi:</p>
+                    <p class="my-2">Barisan aritmatika dapat ditulis sebagai:</p>
+                    <p class="text-center text-xl my-4">\(a, \; a+b, \; a+2b, \; a+3b, \; \ldots, \; a+(n-1)b\)</p>
+                    <p>Dimana:</p>
+                    <ul class="list-disc ml-6">
+                        <li>\(a\) = suku pertama</li>
+                        <li>\(b\) = beda (selisih antara dua suku berurutan)</li>
+                        <li>\(n\) = banyaknya suku</li>
+                    </ul>
+                </div>
+                
+                <p class="mb-3">Rumus umum untuk mencari suku ke-\(n\) dari barisan aritmatika adalah:</p>
+                <div class="bg-blue-50 p-4 rounded-lg mb-4">
+                    <p class="text-center text-xl my-2">\(U_n = a + (n-1)b\)</p>
+                    <p>Dimana:</p>
+                    <ul class="list-disc ml-6">
+                        <li>\(U_n\) = suku ke-\(n\)</li>
+                        <li>\(a\) = suku pertama</li>
+                        <li>\(b\) = beda</li>
+                        <li>\(n\) = nomor suku</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="example p-4 rounded-lg mb-6">
+                <h3 class="font-bold">Contoh:</h3>
+                <ol class="list-decimal ml-6 space-y-3">
+                    <li>
+                        <p>Tentukan suku ke-10 dari barisan aritmatika 3, 7, 11, 15, ...</p>
+                        <p class="mt-2">Penyelesaian:</p>
+                        <p>Diketahui: \(a = 3\) dan \(b = 7 - 3 = 4\)</p>
+                        <p>\(U_{10} = a + (n-1)b\)</p>
+                        <p>\(U_{10} = 3 + (10-1)4\)</p>
+                        <p>\(U_{10} = 3 + 9 \times 4\)</p>
+                        <p>\(U_{10} = 3 + 36\)</p>
+                        <p>\(U_{10} = 39\)</p>
+                        <p class="text-sm text-gray-600">Jadi, suku ke-10 dari barisan aritmatika tersebut adalah 39.</p>
+                    </li>
+                    <li>
+                        <p>Tentukan suku pertama dan beda dari barisan aritmatika jika diketahui \(U_5 = 19\) dan \(U_9 = 35\).</p>
+                        <p class="mt-2">Penyelesaian:</p>
+                        <p>Diketahui: \(U_5 = 19\) dan \(U_9 = 35\)</p>
+                        <p>\(U_5 = a + (5-1)b = a + 4b = 19\) ... (1)</p>
+                        <p>\(U_9 = a + (9-1)b = a + 8b = 35\) ... (2)</p>
+                        <p>Dari persamaan (2) - (1):</p>
+                        <p>\(a + 8b - (a + 4b) = 35 - 19\)</p>
+                        <p>\(4b = 16\)</p>
+                        <p>\(b = 4\)</p>
+                        <p>Substitusi nilai \(b = 4\) ke persamaan (1):</p>
+                        <p>\(a + 4(4) = 19\)</p>
+                        <p>\(a + 16 = 19\)</p>
+                        <p>\(a = 3\)</p>
+                        <p class="text-sm text-gray-600">Jadi, suku pertama \(a = 3\) dan beda \(b = 4\).</p>
+                    </li>
+                </ol>
+            </div>
+            
+            <div class="practice p-4 rounded-lg mb-6">
+                <h3 class="font-bold">Latihan 1: Barisan Aritmatika</h3>
+                <p class="mb-2">Kerjakan soal-soal berikut:</p>
+                
+                <div class="grid grid-cols-1 gap-4 mt-4">
+                    <div>
+                        <p>1. Tentukan suku ke-15 dari barisan aritmatika 5, 9, 13, 17, ...</p>
+                        <div class="answer-box" contenteditable="true"></div>
+                    </div>
+                    <div>
+                        <p>2. Tentukan suku pertama dan beda dari barisan aritmatika jika diketahui \(U_4 = 13\) dan \(U_7 = 22\).</p>
+                        <div class="answer-box" contenteditable="true"></div>
+                    </div>
+                    <div>
+                        <p>3. Suku ke-5 suatu barisan aritmatika adalah 17 dan suku ke-10 adalah 32. Tentukan suku ke-15 dari barisan tersebut.</p>
+                        <div class="answer-box" contenteditable="true"></div>
+                    </div>
+                    <div>
+                        <p>4. Diketahui barisan aritmatika dengan \(U_3 = 11\) dan \(U_8 = 26\). Tentukan nilai \(U_{12}\).</p>
+                        <div class="answer-box" contenteditable="true"></div>
+                    </div>
+                    <div>
+                        <p>5. Tentukan suku ke-20 dari barisan aritmatika 7, 10, 13, 16, ...</p>
+                        <div class="answer-box" contenteditable="true"></div>
+                    </div>
+                    <div>
+                        <p>6. Jika suku ke-6 dari barisan aritmatika adalah 22 dan suku ke-10 adalah 38, tentukan suku pertama dan beda dari barisan tersebut.</p>
+                        <div class="answer-box" contenteditable="true"></div>
+                    </div>
+                    <div>
+                        <p>7. Diketahui barisan aritmatika dengan suku pertama 6 dan beda 4. Tentukan suku ke-25 dari barisan tersebut.</p>
+                        <div class="answer-box" contenteditable="true"></div>
+                    </div>
+                    <div>
+                        <p>8. Suku ke-8 dari suatu barisan aritmatika adalah 31 dan suku ke-15 adalah 59. Tentukan suku ke-20 dari barisan tersebut.</p>
+                        <div class="answer-box" contenteditable="true"></div>
+                    </div>
+                    <div>
+                        <p>9. Jika suku ke-4 dan suku ke-9 dari suatu barisan aritmatika berturut-turut adalah 11 dan 26, tentukan suku ke-13 dari barisan tersebut.</p>
+                        <div class="answer-box" contenteditable="true"></div>
+                    </div>
+                    <div>
+                        <p>10. Diketahui barisan aritmatika dengan \(U_7 - U_4 = 15\) dan \(U_{10} - U_5 = 25\). Tentukan nilai beda dari barisan tersebut.</p>
+                        <div class="answer-box" contenteditable="true"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="page-break"></div>
+        
+        <!-- 2. Deret Aritmatika -->
+        <div class="p-6">
+            <h2 class="section-title text-xl font-bold p-3 rounded-lg mb-4">2. Deret Aritmatika</h2>
+            
+            <div class="mb-6">
+                <p class="mb-3">Deret aritmatika adalah jumlah dari suku-suku barisan aritmatika. Jika \(a, \; a+b, \; a+2b, \; a+3b, \; \ldots, \; a+(n-1)b\) adalah barisan aritmatika, maka deret aritmatikanya adalah:</p>
+                
+                <div class="bg-blue-50 p-4 rounded-lg mb-4">
+                    <p class="text-center text-xl my-2">\(S_n = a + (a+b) + (a+2b) + (a+3b) + \ldots + (a+(n-1)b)\)</p>
+                    <p class="font-medium mt-4">Rumus jumlah \(n\) suku pertama deret aritmatika:</p>
+                    <p class="text-center text-xl my-2">\(S_n = \frac{n}{2}(a + U_n) = \frac{n}{2}(2a + (n-1)b)\)</p>
+                    <p>Dimana:</p>
+                    <ul class="list-disc ml-6">
+                        <li>\(S_n\) = jumlah \(n\) suku pertama</li>
+                        <li>\(a\) = suku pertama</li>
+                        <li>\(U_n\) = suku ke-\(n\)</li>
+                        <li>\(b\) = beda</li>
+                        <li>\(n\) = banyaknya suku</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="example p-4 rounded-lg mb-6">
+                <h3 class="font-bold">Contoh:</h3>
+                <ol class="list-decimal ml-6 space-y-3">
+                    <li>
+                        <p>Hitunglah jumlah 20 suku pertama dari deret aritmatika 3 + 7 + 11 + 15 + ...</p>
+                        <p class="mt-2">Penyelesaian:</p>
+                        <p>Diketahui: \(a = 3\) dan \(b = 7 - 3 = 4\)</p>
+                        <p>\(S_{20} = \frac{n}{2}(2a + (n-1)b)\)</p>
+                        <p>\(S_{20} = \frac{20}{2}(2 \times 3 + (20-1)4)\)</p>
+                        <p>\(S_{20} = 10(6 + 19 \times 4)\)</p>
+                        <p>\(S_{20} = 10(6 + 76)\)</p>
+                        <p>\(S_{20} = 10 \times 82\)</p>
+                        <p>\(S_{20} = 820\)</p>
+                        <p class="text-sm text-gray-600">Jadi, jumlah 20 suku pertama dari deret aritmatika tersebut adalah 820.</p>
+                    </li>
+                    <li>
+                        <p>Hitunglah jumlah deret aritmatika 5 + 8 + 11 + ... + 62.</p>
+                        <p class="mt-2">Penyelesaian:</p>
+                        <p>Diketahui: \(a = 5\), \(b = 8 - 5 = 3\), dan \(U_n = 62\)</p>
+                        <p>Untuk mencari nilai \(n\), gunakan rumus \(U_n = a + (n-1)b\):</p>
+                        <p>\(62 = 5 + (n-1)3\)</p>
+                        <p>\(62 = 5 + 3n - 3\)</p>
+                        <p>\(62 = 2 + 3n\)</p>
+                        <p>\(3n = 60\)</p>
+                        <p>\(n = 20\)</p>
+                        <p>Sekarang hitung jumlah deret:</p>
+                        <p>\(S_{20} = \frac{20}{2}(5 + 62)\)</p>
+                        <p>\(S_{20} = 10 \times 67\)</p>
+                        <p>\(S_{20} = 670\)</p>
+                        <p class="text-sm text-gray-600">Jadi, jumlah deret aritmatika tersebut adalah 670.</p>
+                    </li>
+                </ol>
+            </div>
+            
+            <div class="practice p-4 rounded-lg mb-6">
+                <h3 class="font-bold">Latihan 2: Deret Aritmatika</h3>
+                <p class="mb-2">Kerjakan soal-soal berikut:</p>
+                
+                <div class="grid grid-cols-1 gap-4 mt-4">
+                    <div>
+                        <p>1. Hitunglah jumlah 25 suku pertama dari deret aritmatika 4 + 7 + 10 + 13 + ...</p>
+                        <div class="answer-box" contenteditable="true"></div>
+                    </div>
+                    <div>
+                        <p>2. Hitunglah jumlah deret aritmatika 6 + 10 + 14 + ... + 86.</p>
+                        <div class="answer-box" contenteditable="true"></div>
+                    </div>
+                    <div>
+                        <p>3. Jumlah 20 suku pertama dari suatu deret aritmatika adalah 400. Jika suku pertamanya adalah 5, tentukan bedanya.</p>
+                        <div class="answer-box" contenteditable="true"></div>
+                    </div>
+                    <div>
+                        <p>4. Jumlah \(n\) suku pertama dari suatu deret aritmatika adalah \(S_n = 3n^2 + 4n\). Tentukan suku ke-10 dari deret tersebut.</p>
+                        <div class="answer-box" contenteditable="true"></div>
+                    </div>
+                    <div>
+                        <p>5. Hitunglah jumlah deret aritmatika 3 + 9 + 15 + ... + 99.</p>
+                        <div class="answer-box" contenteditable="true"></div>
+                    </div>
+                    <div>
+                        <p>6. Jumlah 15 suku pertama dari suatu deret aritmatika adalah 225. Jika suku ke-5 adalah 15, tentukan suku pertama dan beda dari deret tersebut.</p>
+                        <div class="answer-box" contenteditable="true"></div>
+                    </div>
+                    <div>
+                        <p>7. Diketahui deret aritmatika dengan \(a = 7\) dan \(b = 3\). Tentukan jumlah 30 suku pertama dari deret tersebut.</p>
+                        <div class="answer-box" contenteditable="true"></div>
+                    </div>
+                    <div>
+                        <p>8. Jumlah 10 suku pertama suatu deret aritmatika adalah 120 dan jumlah 20 suku pertamanya adalah 540. Tentukan suku pertama dan beda dari deret tersebut.</p>
+                        <div class="answer-box" contenteditable="true"></div>
+                    </div>
+                    <div>
+                        <p>9. Hitunglah jumlah semua bilangan asli antara 1 dan 100 yang habis dibagi 5.</p>
+                        <div class="answer-box" contenteditable="true"></div>
+                    </div>
+                    <div>
+                        <p>10. Jumlah deret aritmatika dengan 25 suku adalah 1250. Jika suku pertama adalah 10, tentukan beda dari deret tersebut.</p>
+                        <div class="answer-box" contenteditable="true"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="page-break"></div>
+        
+        <!-- 3. Sifat-Sifat Barisan dan Deret Aritmatika -->
+        <div class="p-6">
+            <h2 class="section-title text-xl font-bold p-3 rounded-lg mb-4">3. Sifat-Sifat Barisan dan Deret Aritmatika</h2>
+            
+            <div class="mb-6">
+                <p class="mb-3">Barisan dan deret aritmatika memiliki beberapa sifat penting yang dapat membantu dalam menyelesaikan permasalahan.</p>
+                
+                <div class="bg-blue-50 p-4 rounded-lg mb-4">
+                    <p class="font-medium">Sifat 1: Suku Tengah</p>
+                    <p>Jika suatu barisan aritmatika memiliki jumlah suku ganjil, maka suku tengahnya sama dengan rata-rata dari suku pertama dan suku terakhir.</p>
+                    <p class="text-center text-xl my-2">\(U_{\text{tengah}} = \frac{a + U_n}{2}\)</p>
+                    
+                    <p class="font-medium mt-4">Sifat 2: Sisipan</p>
+                    <p>Jika di antara dua suku berurutan dari barisan aritmatika disisipkan \(k\) bilangan sehingga barisan yang baru juga merupakan barisan aritmatika, maka beda barisan yang baru adalah:</p>
+                    <p class="text-center text-xl my-2">\(b_{\text{baru}} = \frac{b}{k+1}\)</p>
+                    
+                    <p class="font-medium mt-4">Sifat 3: Jumlah Suku-Suku yang Berseberangan</p>
+                    <p>Dalam suatu deret aritmatika dengan \(n\) suku, jumlah suku ke-\(p\) dan suku ke-\((n+1-p)\) adalah sama untuk semua nilai \(p\).</p>
+                    <p class="text-center text-xl my-2">\(U_p + U_{n+1-p} = a + U_n = 2U_{\text{tengah}}\)</p>
+                </div>
+            </div>
+            
+            <div class="example p-4 rounded-lg mb-6">
+                <h3 class="font-bold">Contoh:</h3>
+                <ol class="list-decimal ml-6 space-y-3">
+                    <li>
+                        <p>Dalam suatu barisan aritmatika, diketahui jumlah suku ke-3 dan suku ke-7 adalah 30, sedangkan jumlah suku ke-5 dan suku ke-10 adalah 45. Tentukan suku pertama dan beda dari barisan tersebut.</p>
+                        <p class="mt-2">Penyelesaian:</p>
+                        <p>Diketahui: \(U_3 + U_7 = 30\) dan \(U_5 + U_{10} = 45\)</p>
+                        <p>\(U_3 = a + 2b\) dan \(U_7 = a + 6b\)</p>
+                        <p>\(U_3 + U_7 = (a + 2b) + (a + 6b) = 2a + 8b = 30\) ... (1)</p>
+                        <p>\(U_5 = a + 4b\) dan \(U_{10} = a + 9b\)</p>
+                        <p>\(U_5 + U_{10} = (a + 4b) + (a + 9b) = 2a + 13b = 45\) ... (2)</p>
+                        <p>Dari persamaan (2) - (1):</p>
+                        <p>\((2a + 13b) - (2a + 8b) = 45 - 30\)</p>
+                        <p>\(5b = 15\)</p>
+                        <p>\(b = 3\)</p>
+                        <p>Substitusi nilai \(b = 3\) ke persamaan (1):</p>
+                        <p>\(2a + 8(3) = 30\)</p>
+                        <p>\(2a + 24 = 30\)</p>
+                        <p>\(2a = 6\)</p>
+                        <p>\(a = 3\)</p>
+                        <p class="text-sm text-gray-600">Jadi, suku pertama \(a = 3\) dan beda \(b = 3\).</p>
+                    </li>
+                    <li>
+                        <p>Di antara bilangan 5 dan 23 disisipkan 3 bilangan sehingga kelima bilangan tersebut membentuk barisan aritmatika. Tentukan barisan aritmatika yang terbentuk.</p>
+                        <p class="mt-2">Penyelesaian:</p>
+                        <p>Diketahui: \(a = 5\), \(U_5 = 23\), dan \(k = 3\) (banyak bilangan yang disisipkan)</p>
+                        <p>Beda barisan aritmatika yang baru:</p>
+                        <p>\(b = \frac{U_5 - a}{5-1} = \frac{23 - 5}{4} = \frac{18}{4} = 4.5\)</p>
+                        <p>Barisan aritmatika yang terbentuk:</p>
+                        <p>\(U_1 = a = 5\)</p>
+                        <p>\(U_2 = a + b = 5 + 4.5 = 9.5\)</p>
+                        <p>\(U_3 = a + 2b = 5 + 2(4.5) = 5 + 9 = 14\)</p>
+                        <p>\(U_4 = a + 3b = 5 + 3(4.5) = 5 + 13.5 = 18.5\)</p>
+                        <p>\(U_5 = a + 4b = 5 + 4(4.5) = 5 + 18 = 23\)</p>
+                        <p class="text-sm text-gray-600">Jadi, barisan aritmatika yang terbentuk adalah 5, 9.5, 14, 18.5, 23.</p>
+                    </li>
+                </ol>
+            </div>
+            
+            <div class="practice p-4 rounded-lg mb-6">
+                <h3 class="font-bold">Latihan 3: Sifat-Sifat Barisan dan Deret Aritmatika</h3>
+                <p class="mb-2">Kerjakan soal-soal berikut:</p>
+                
+                <div class="grid grid-cols-1 gap-4 mt-4">
+                    <div>
+                        <p>1. Dalam suatu barisan aritmatika, diketahui jumlah suku ke-4 dan suku ke-8 adalah 42, sedangkan jumlah suku ke-6 dan suku ke-12 adalah 66. Tentukan suku pertama dan beda dari barisan tersebut.</p>
+                        <div class="answer-box" contenteditable="true"></div>
+                    </div>
+                    <div>
+                        <p>2. Di antara bilangan 7 dan 31 disisipkan 4 bilangan sehingga keenam bilangan tersebut membentuk barisan aritmatika. Tentukan barisan aritmatika yang terbentuk.</p>
+                        <div class="answer-box" contenteditable="true"></div>
+                    </div>
+                    <div>
+                        <p>3. Suku tengah dari barisan aritmatika dengan 9 suku adalah 25. Jika suku pertamanya adalah 9, tentukan suku terakhir dari barisan tersebut.</p>
+                        <div class="answer-box" contenteditable="true"></div>
+                    </div>
+                    <div>
+                        <p>4. Dalam suatu barisan aritmatika dengan 11 suku, diketahui jumlah suku ke-3 dan suku ke-9 adalah 40. Jika beda barisan tersebut adalah 3, tentukan suku pertamanya.</p>
+                        <div class="answer-box" contenteditable="true"></div>
+                    </div>
+                    <div>
+                        <p>5. Di antara bilangan 4 dan 28 disisipkan beberapa bilangan sehingga terbentuk barisan aritmatika dengan beda 3. Tentukan banyaknya bilangan yang disisipkan.</p>
+                        <div class="answer-box" contenteditable="true"></div>
+                    </div>
+                    <div>
+                        <p>6. Dalam suatu barisan aritmatika dengan 15 suku, diketahui suku tengahnya adalah 30. Jika jumlah semua suku dalam barisan tersebut adalah 450, tentukan suku pertama dan beda dari barisan tersebut.</p>
+                        <div class="answer-box" contenteditable="true"></div>
+                    </div>
+                    <div>
+                        <p>7. Di antara bilangan 10 dan 26 disisipkan 3 bilangan sehingga kelima bilangan tersebut membentuk barisan aritmatika. Tentukan jumlah dari ketiga bilangan yang disisipkan.</p>
+                        <div class="answer-box" contenteditable="true"></div>
+                    </div>
+                    <div>
+                        <p>8. Dalam suatu barisan aritmatika dengan 13 suku, diketahui \(U_4 + U_{10} = 50\) dan \(U_7 + U_{13} = 80\). Tentukan suku pertama dan beda dari barisan tersebut.</p>
+                        <div class="answer-box" contenteditable="true"></div>
+                    </div>
+                    <div>
+                        <p>9. Suku tengah dari barisan aritmatika dengan 7 suku adalah 20. Jika jumlah semua suku dalam barisan tersebut adalah 140, tentukan suku pertama dan beda dari barisan tersebut.</p>
+                        <div class="answer-box" contenteditable="true"></div>
+                    </div>
+                    <div>
+                        <p>10. Di antara bilangan 5 dan 65 disisipkan beberapa bilangan sehingga terbentuk barisan aritmatika dengan beda 6. Tentukan banyaknya bilangan yang disisipkan dan jumlah semua bilangan dalam barisan tersebut.</p>
+                        <div class="answer-box" contenteditable="true"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="page-break"></div>
+        
+        <!-- 4. Aplikasi Barisan dan Deret Aritmatika dalam Kehidupan Sehari-hari -->
+        <div class="p-6">
+            <h2 class="section-title text-xl font-bold p-3 rounded-lg mb-4">4. Aplikasi Barisan dan Deret Aritmatika dalam Kehidupan Sehari-hari</h2>
+            
+            <div class="mb-6">
+                <p class="mb-3">Barisan dan deret aritmatika memiliki banyak aplikasi dalam kehidupan sehari-hari, seperti dalam bidang ekonomi, fisika, arsitektur, dan lain-lain.</p>
+                
+                <div class="bg-blue-50 p-4 rounded-lg mb-4">
+                    <p class="font-medium">Beberapa aplikasi barisan dan deret aritmatika:</p>
+                    <ol class="list-decimal ml-6">
+                        <li>Perhitungan gaji atau upah yang meningkat secara tetap</li>
+                        <li>Perhitungan jumlah kursi dalam gedung pertunjukan</li>
+                        <li>Perhitungan jumlah barang dalam susunan bertingkat</li>
+                        <li>Perhitungan jarak tempuh dalam gerak lurus berubah beraturan</li>
+                        <li>Perhitungan biaya produksi yang meningkat secara tetap</li>
+                    </ol>
+                </div>
+            </div>
+            
+            <div class="example p-4 rounded-lg mb-6">
+                <h3 class="font-bold">Contoh Soal Aplikasi:</h3>
+                <ol class="list-decimal ml-6 space-y-5">
+                    <li>
+                        <p><strong>Perhitungan Gaji:</strong></p>
+                        <p>Seorang karyawan mendapatkan gaji awal sebesar Rp 4.000.000 per bulan. Setiap tahun, gajinya naik sebesar Rp 500.000. Berapakah total gaji yang diterima karyawan tersebut selama 10 tahun bekerja?</p>
+                        <p class="mt-2">Penyelesaian:</p>
+                        <p>Diketahui: \(a = 4.000.000\), \(b = 500.000\), dan \(n = 10\)</p>
+                        <p>Total gaji selama 10 tahun:</p>
+                        <p>\(S_{10} = \frac{10}{2}(2 \times 4.000.000 + (10-1) \times 500.000)\)</p>
+                        <p>\(S_{10} = 5(8.000.000 + 4.500.000)\)</p>
+                        <p>\(S_{10} = 5 \times 12.500.000\)</p>
+                        <p>\(S_{10} = 62.500.000\)</p>
+                        <p class="text-sm text-gray-600">Jadi, total gaji yang diterima karyawan selama 10 tahun adalah Rp 62.500.000.</p>
+                    </li>
+                    <li>
+                        <p><strong>Susunan Kursi:</strong></p>
+                        <p>Sebuah gedung pertunjukan memiliki 25 baris kursi. Baris pertama terdiri dari 20 kursi, dan setiap baris berikutnya bertambah 2 kursi. Berapakah jumlah kursi dalam gedung pertunjukan tersebut?</p>
+                        <p class="mt-2">Penyelesaian:</p>
+                        <p>Diketahui: \(a = 20\), \(b = 2\), dan \(n = 25\)</p>
+                        <p>Jumlah kursi dalam gedung:</p>
+                        <p>\(S_{25} = \frac{25}{2}(2 \times 20 + (25-1) \times 2)\)</p>
+                        <p>\(S_{25} = 12.5(40 + 48)\)</p>
+                        <p>\(S_{25} = 12.5 \times 88\)</p>
+                        <p>\(S_{25} = 1100\)</p>
+                        <p class="text-sm text-gray-600">Jadi, jumlah kursi dalam gedung pertunjukan tersebut adalah 1100 kursi.</p>
+                    </li>
+                    <li>
+                        <p><strong>Jarak Tempuh:</strong></p>
+                        <p>Sebuah benda bergerak dengan kecepatan awal 5 m/s dan mengalami percepatan tetap 2 m/s². Berapakah jarak yang ditempuh benda tersebut selama 10 detik?</p>
+                        <p class="mt-2">Penyelesaian:</p>
+                        <p>Jarak yang ditempuh pada detik ke-\(t\) adalah \(s_t = v_0 \times t + \frac{1}{2} \times a \times t^2\)</p>
+                        <p>Jarak yang ditempuh pada detik pertama:</p>
+                        <p>\(s_1 = 5 \times 1 + \frac{1}{2} \times 2 \times 1^2 = 5 + 1 = 6\) meter</p>
+                        <p>Jarak yang ditempuh pada detik kedua:</p>
+                        <p>\(s_2 = 5 \times 2 + \frac{1}{2} \times 2 \times 2^2 = 10 + 4 = 14\) meter</p>
+                        <p>Jarak yang ditempuh pada detik ketiga:</p>
+                        <p>\(s_3 = 5 \times 3 + \frac{1}{2} \times 2 \times 3^2 = 15 + 9 = 24\) meter</p>
+                        <p>Kita dapat melihat bahwa jarak tempuh membentuk barisan aritmatika dengan \(a = 6\) dan \(b = 8\)</p>
+                        <p>Total jarak yang ditempuh selama 10 detik:</p>
+                        <p>\(S_{10} = \frac{10}{2}(2 \times 6 + (10-1) \times 8)\)</p>
+                        <p>\(S_{10} = 5(12 + 72)\)</p>
+                        <p>\(S_{10} = 5 \times 84\)</p>
+                        <p>\(S_{10} = 420\)</p>
+                        <p class="text-sm text-gray-600">Jadi, jarak yang ditempuh benda selama 10 detik adalah 420 meter.</p>
+                    </li>
+                </ol>
+            </div>
+            
+            <div class="practice p-4 rounded-lg mb-6">
+                <h3 class="font-bold">Latihan 4: Aplikasi Barisan dan Deret Aritmatika</h3>
+                <p class="mb-2">Selesaikan soal-soal berikut:</p>
+                
+                <div class="grid grid-cols-1 gap-4 mt-4">
+                    <div>
+                        <p>1. Seorang pegawai menerima gaji pertama sebesar Rp 3.500.000. Setiap tahun gajinya naik sebesar Rp 400.000. Berapakah total gaji yang diterima pegawai tersebut selama 12 tahun bekerja?</p>
+                        <div class="answer-box" contenteditable="true"></div>
+                    </div>
+                    <div>
+                        <p>2. Sebuah gedung bioskop memiliki 20 baris kursi. Baris pertama terdiri dari 15 kursi, dan setiap baris berikutnya bertambah 3 kursi. Berapakah jumlah kursi dalam gedung bioskop tersebut?</p>
+                        <div class="answer-box" contenteditable="true"></div>
+                    </div>
+                    <div>
+                        <p>3. Seorang penabung menyimpan uang di bank sebesar Rp 1.000.000 pada bulan pertama. Setiap bulan berikutnya, ia menambah tabungannya sebesar Rp 200.000 dari bulan sebelumnya. Berapakah jumlah uang yang ditabung selama 18 bulan?</p>
+                        <div class="answer-box" contenteditable="true"></div>
+                    </div>
+                    <div>
+                        <p>4. Sebuah bola dijatuhkan dari ketinggian 100 meter. Setiap kali bola memantul, ketinggiannya menjadi 0,8 kali dari ketinggian sebelumnya. Berapakah total jarak yang ditempuh bola sampai berhenti (setelah memantul 5 kali)?</p>
+                        <div class="answer-box" contenteditable="true"></div>
+                    </div>
+                    <div>
+                        <p>5. Sebuah perusahaan memproduksi 1000 unit barang pada bulan pertama. Karena permintaan meningkat, perusahaan tersebut menambah produksi sebanyak 150 unit setiap bulannya. Berapakah total produksi perusahaan tersebut selama 1 tahun?</p>
+                        <div class="answer-box" contenteditable="true"></div>
+                    </div>
+                    <div>
+                        <p>6. Seorang kontraktor membangun sebuah gedung bertingkat. Biaya pembangunan lantai pertama adalah Rp 500.000.000, dan setiap lantai berikutnya membutuhkan biaya tambahan Rp 25.000.000 dari lantai sebelumnya. Berapakah total biaya pembangunan gedung 15 lantai?</p>
+                        <div class="answer-box" contenteditable="true"></div>
+                    </div>
+                    <div>
+                        <p>7. Sebuah stadion memiliki tribun dengan 30 baris kursi. Baris paling bawah memiliki 40 kursi, dan setiap baris di atasnya memiliki 4 kursi lebih banyak dari baris di bawahnya. Berapakah kapasitas total stadion tersebut?</p>
+                        <div class="answer-box" contenteditable="true"></div>
+                    </div>
+                    <div>
+                        <p>8. Seorang atlet lari melakukan latihan dengan jarak tempuh yang meningkat setiap harinya. Pada hari pertama, ia berlari sejauh 3 km. Setiap hari berikutnya, jarak tempuhnya bertambah 0,5 km. Berapakah total jarak yang ditempuh atlet tersebut selama 30 hari latihan?</p>
+                        <div class="answer-box" contenteditable="true"></div>
+                    </div>
+                    <div>
+                        <p>9. Sebuah mobil bergerak dengan kecepatan awal 10 m/s dan mengalami percepatan tetap 2 m/s². Berapakah jarak yang ditempuh mobil tersebut selama 15 detik?</p>
+                        <div class="answer-box" contenteditable="true"></div>
+                    </div>
+                    <div>
+                        <p>10. Sebuah tangga memiliki 20 anak tangga. Tinggi anak tangga pertama adalah 15 cm, dan setiap anak tangga berikutnya lebih tinggi 0,5 cm dari anak tangga sebelumnya. Berapakah tinggi total tangga tersebut?</p>
+                        <div class="answer-box" contenteditable="true"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="page-break"></div>
+        
+        <!-- Latihan Soal Gabungan -->
+        <div class="p-6">
+            <h2 class="section-title text-xl font-bold p-3 rounded-lg mb-4">Latihan Soal Gabungan</h2>
+            
+            <div class="practice p-4 rounded-lg mb-6">
+                <h3 class="font-bold">Latihan Gabungan: Barisan dan Deret Aritmatika</h3>
+                <p class="mb-2">Selesaikan soal-soal berikut:</p>
+                
+                <div class="grid grid-cols-1 gap-4 mt-4">
+                    <div>
+                        <p>1. Diketahui suku ke-5 dan suku ke-9 dari suatu barisan aritmatika berturut-turut adalah 18 dan 30. Tentukan suku ke-15 dari barisan tersebut.</p>
+                        <div class="answer-box" contenteditable="true"></div>
+                    </div>
+                    <div>
+                        <p>2. Jumlah 20 suku pertama dari suatu deret aritmatika adalah 570. Jika suku ke-5 adalah 20, tentukan suku pertama dan beda dari deret tersebut.</p>
+                        <div class="answer-box" contenteditable="true"></div>
+                    </div>
+                    <div>
+                        <p>3. Jumlah tiga suku pertama suatu barisan aritmatika adalah 18, dan jumlah tiga suku berikutnya adalah 36. Tentukan suku ke-10 dari barisan tersebut.</p>
+                        <div class="answer-box" contenteditable="true"></div>
+                    </div>
+                    <div>
+                        <p>4. Di antara bilangan 8 dan 38 disisipkan beberapa bilangan sehingga bilangan-bilangan tersebut membentuk barisan aritmatika dengan beda 5. Tentukan banyaknya bilangan yang disisipkan.</p>
+                        <div class="answer-box" contenteditable="true"></div>
+                    </div>
+                    <div>
+                        <p>5. Suku ke-3 suatu barisan aritmatika adalah 15 dan suku ke-7 adalah 31. Tentukan jumlah 10 suku pertama dari barisan tersebut.</p>
+                        <div class="answer-box" contenteditable="true"></div>
+                    </div>
+                    <div>
+                        <p>6. Dalam suatu barisan aritmatika, diketahui \(U_3 + U_6 + U_9 = 45\) dan \(U_4 + U_8 + U_{12} = 75\). Tentukan nilai \(U_{10}\).</p>
+                        <div class="answer-box" contenteditable="true"></div>
+                    </div>
+                    <div>
+                        <p>7. Sebuah taman berbentuk persegi panjang memiliki panjang 20 meter dan lebar 15 meter. Di sekeliling taman tersebut akan ditanami pohon dengan jarak antar pohon yang sama. Jika di setiap pojok taman terdapat pohon dan jarak antar pohon adalah 5 meter, berapakah jumlah pohon yang dibutuhkan?</p>
+                        <div class="answer-box" contenteditable="true"></div>
+                    </div>
+                    <div>
+                        <p>8. Seorang pengusaha meminjam modal sebesar Rp 50.000.000 dari bank. Ia akan mengembalikan pinjaman tersebut dengan cara mencicil selama 10 bulan. Pada bulan pertama ia membayar Rp 3.000.000, dan setiap bulan berikutnya bertambah Rp 500.000 dari bulan sebelumnya. Berapakah sisa hutang yang harus dibayar pada pembayaran terakhir?</p>
+                        <div class="answer-box" contenteditable="true"></div>
+                    </div>
+                    <div>
+                        <p>9. Sebuah teater memiliki 15 baris kursi. Baris pertama terdiri dari 20 kursi, baris kedua terdiri dari 22 kursi, dan seterusnya. Jika kapasitas teater adalah 510 kursi, tentukan banyaknya kursi pada baris terakhir.</p>
+                        <div class="answer-box" contenteditable="true"></div>
+                    </div>
+                    <div>
+                        <p>10. Seorang atlet berlari dengan kecepatan awal 4 m/s. Setiap 5 detik, kecepatannya bertambah 0,5 m/s. Berapakah jarak yang ditempuh atlet tersebut selama 1 menit?</p>
+                        <div class="answer-box" contenteditable="true"></div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="bg-green-50 border-l-4 border-green-500 p-4 my-6">
+                <p class="font-medium">Kesimpulan:</p>
+                <p class="mt-2">Barisan dan deret aritmatika adalah konsep matematika yang memiliki banyak aplikasi dalam kehidupan sehari-hari. Beberapa hal penting tentang barisan dan deret aritmatika:</p>
+                <ol class="list-decimal ml-5 mt-2">
+                    <li>Barisan aritmatika adalah barisan bilangan yang memiliki selisih (beda) yang tetap antara dua suku berurutan.</li>
+                    <li>Rumus suku ke-\(n\) dari barisan aritmatika: \(U_n = a + (n-1)b\)</li>
+                    <li>Rumus jumlah \(n\) suku pertama deret aritmatika: \(S_n = \frac{n}{2}(2a + (n-1)b) = \frac{n}{2}(a + U_n)\)</li>
+                    <li>Sifat-sifat barisan dan deret aritmatika dapat membantu dalam menyelesaikan berbagai permasalahan.</li>
+                    <li>Aplikasi barisan dan deret aritmatika dapat ditemukan dalam berbagai bidang, seperti ekonomi, fisika, arsitektur, dan lain-lain.</li>
+                </ol>
+                <p class="mt-2">Dengan memahami dan menerapkan konsep barisan dan deret aritmatika, kita dapat menyelesaikan berbagai persoalan matematika dengan lebih mudah dan efisien.</p>
+            </div>
+        </div>
+        
+        <!-- Print Button -->
+        <div class="p-4 text-center sticky bottom-0 bg-white shadow-lg border-t border-gray-200">
+            <button id="printButton" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-6 rounded-full shadow-md transition duration-300 ease-in-out transform hover:scale-105 flex items-center mx-auto">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h6a2 2 0 002-2v-4a2 2 0 00-2-2H9a2 2 0 00-2 2v4a2 2 0 002 2zm8-12V5a2 2 0 00-2-2H9a2 2 0 00-2 2v4h10z" />
+                </svg>
+                Cetak Lembar Kerja
+            </button>
+        </div>
+
+        <!-- Footer -->
+        <div class="p-6 bg-gray-100 text-center">
+            <p>© Lembar Kerja Barisan dan Deret Aritmatika</p>
+        </div>
+        
+        <script>
+            // Script untuk membuat answer-box bisa diedit
+            document.addEventListener('DOMContentLoaded', function() {
+                const answerBoxes = document.querySelectorAll('.answer-box');
+                answerBoxes.forEach(box => {
+                    box.addEventListener('focus', function() {
+                        if (this.textContent === '') {
+                            this.style.backgroundColor = '#f9f9f9';
+                        }
+                    });
+                    
+                    box.addEventListener('blur', function() {
+                        if (this.textContent === '') {
+                            this.style.backgroundColor = '#fff';
+                        }
+                    });
+                });
+                
+                // Print functionality
+                document.getElementById('printButton').addEventListener('click', function() {
+                    window.print();
+                });
+            });
+        </script>
+        
+        <style>
+            @media print {
+                body {
+                    background-color: white;
+                }
+                .page-break {
+                    page-break-after: always;
+                }
+                #printButton {
+                    display: none;
+                }
+                .sticky {
+                    position: static;
+                }
+                .shadow-lg {
+                    box-shadow: none;
+                }
+                .answer-box {
+                    border: 1px solid #ddd;
+                    min-height: 80px;
+                }
+                @page {
+                    margin: 1.5cm;
+                }
+            }
+        </style>
+    </div>
+    
+    <!-- MathJax for rendering mathematical expressions -->
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'962885c71043e78f',t:'MTc1MzA3ODA5NC4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>
